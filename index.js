@@ -5,7 +5,9 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
-//will need to require models here
+require('./models/User');
+require('./models/Blog');
+//need to require ./services/passport
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, { useMongoClient: true });
@@ -22,8 +24,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//require routes/authRoutes
-//require routes/blogRoutes
+require('./routes/authRoutes')(app);
+require('./routes/blogRoutes')(app);
 
 if (['production'].includes(process.env.NODE_ENV)) {
   app.use(express.static('client/build'));
