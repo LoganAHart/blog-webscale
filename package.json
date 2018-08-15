@@ -13,7 +13,7 @@
     "heroku-postbuild": "npm run build"
   },
   "repository": "https://github.com/LoganAHart/blog-webscale.git",
-  "author": "Logan Hart <2loganhart@gmail.com>",
+  "author": "Logan Hart",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.292.0",
