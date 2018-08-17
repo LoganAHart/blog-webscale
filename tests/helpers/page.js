@@ -26,11 +26,10 @@ class CustomPage {
   async login() {
     this.user = await userFactory.createUser();
     const { session, sig } = sessionFactory(this.user);
-    const url = this.page.url();
 
     await this.page.setCookie({ name: 'session', value: session });
     await this.page.setCookie({ name: 'session.sig', value: sig });
-    await this.page.goto(url);
+    await this.page.goto('localhost:3000/blogs');
     await this.page.waitFor('a[href="/auth/logout"]');
   }
 
