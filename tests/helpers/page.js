@@ -40,6 +40,10 @@ class CustomPage {
     }
     await this.browser.close();
   }
+
+  async getContentsOf(selector) {
+    return this.page.$eval(selector, el => el.innerHTML);
+  }
 }
 
 module.exports = CustomPage;
