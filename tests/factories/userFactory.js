@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
-module.exports = () => {
-  return new User({}).save();
+module.exports = {
+  createUser: () => {
+    return new User({}).save();
+  },
+  deleteUser: (user) => {
+    return User.findByIdAndRemove(user._id);
+  },
 }
 
 /*
