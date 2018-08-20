@@ -11,7 +11,6 @@ module.exports = app => {
       _user: req.user.id,
       _id: req.params.id
     });
-
     res.send(blog);
   });
 
