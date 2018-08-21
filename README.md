@@ -1,2 +1,2 @@
 # Blog App
-will add more information later
+will add more information later.
